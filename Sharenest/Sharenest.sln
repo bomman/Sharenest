@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.7
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharenest", "Sharenest\Sharenest.csproj", "{28591D54-1522-4B67-97EF-323B56384F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharenest.Tests", "Sharenest.Tests\Sharenest.Tests.csproj", "{091CC6E5-75D3-4068-939D-2FEA46CE6E79}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharenest.Services", "Sharenest.Services\Sharenest.Services.csproj", "{AECE6E19-648A-4ECE-9883-067AA5598102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharenest.Models", "Sharenest.Models\Sharenest.Models.csproj", "{8796A8C1-00F4-439E-A6CC-D459AF97E5BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sharenest.Data", "Sharenest.Data\Sharenest.Data.csproj", "{CF06FCB4-31CF-48F4-9C16-0ECAB8DEA2B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28591D54-1522-4B67-97EF-323B56384F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28591D54-1522-4B67-97EF-323B56384F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28591D54-1522-4B67-97EF-323B56384F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28591D54-1522-4B67-97EF-323B56384F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{091CC6E5-75D3-4068-939D-2FEA46CE6E79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{091CC6E5-75D3-4068-939D-2FEA46CE6E79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{091CC6E5-75D3-4068-939D-2FEA46CE6E79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{091CC6E5-75D3-4068-939D-2FEA46CE6E79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AECE6E19-648A-4ECE-9883-067AA5598102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AECE6E19-648A-4ECE-9883-067AA5598102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AECE6E19-648A-4ECE-9883-067AA5598102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AECE6E19-648A-4ECE-9883-067AA5598102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8796A8C1-00F4-439E-A6CC-D459AF97E5BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8796A8C1-00F4-439E-A6CC-D459AF97E5BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8796A8C1-00F4-439E-A6CC-D459AF97E5BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8796A8C1-00F4-439E-A6CC-D459AF97E5BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF06FCB4-31CF-48F4-9C16-0ECAB8DEA2B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF06FCB4-31CF-48F4-9C16-0ECAB8DEA2B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF06FCB4-31CF-48F4-9C16-0ECAB8DEA2B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF06FCB4-31CF-48F4-9C16-0ECAB8DEA2B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
