@@ -4,71 +4,49 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>@Model.Name</h2>
 
-<div>
-    <h4>Home</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</p>
+<div class="panel">
+    <div class="panel-heading">
+        <img src="@Model.ProfilePicture" alt="Profile Picture"/>
+    </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
+    <div class="panel-body">
+        <div>
+            @Html.DisplayNameFor(model => model.Rating) - @Html.DisplayFor(model => model.Rating)
+            <input id="rating-system" type="number" class="rating" min="1" max="5" step="1">
+        </div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Activities)
-        </dt>
+        <dl class="dl-horizontal">
+            <dt>@Html.DisplayNameFor(model => model.StartDate)</dt>
+            <dd>@Html.DisplayFor(model => model.StartDate)</dd>
+            
+            <dt>@Html.DisplayNameFor(model => model.EndDate)</dt>
+            <dd>@Html.DisplayFor(model => model.EndDate)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Activities)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.Location.Name)</dt>
+            <dd>@Html.DisplayFor(model => model.Location.Name), @Html.DisplayFor(model => model.Location.Country)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Provision)
-        </dt>
+            <dt>@Html.DisplayNameFor(model => model.Activities)</dt>
+            <dd>@Html.DisplayFor(model => model.Activities)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Provision)
-        </dd>
+            <dt>@Html.DisplayNameFor(model => model.Provision)</dt>
+            <dd>@Html.DisplayFor(model => model.Provision)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Notes)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Notes)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StartDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.EndDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.EndDate)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-
-    </dl>
+            <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
+            <dd>@Html.DisplayFor(model => model.Notes)</dd>
+        </dl>
+    </div>
+    <div class="panel-footer">
+        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+            <img src="http://pik.bg/f/gallery/187/0298ef57516d8859f57279a928a63398.jpg" class="img-responsive">
+        </div>
+        @foreach (var picture in Model.PicturesMedium)
+        {
+            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                <img src="@picture" class="img-responsive">
+            </div>
+        }
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

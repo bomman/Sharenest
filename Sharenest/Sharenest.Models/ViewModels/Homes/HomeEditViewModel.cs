@@ -22,12 +22,15 @@ namespace Sharenest.Models.ViewModels.Homes
 
         public string Notes { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayName("Start Date")]
         public DateTime? StartDate { get; set; }
 
+        [DataType(DataType.Date)]
         [DisplayName("End Date")]
         public DateTime? EndDate { get; set; }
 
+        [DataType(DataType.Date)]
         public DateTime? PostedDate { get; set; }
 
         public List<string> PicturesMedium { get; set; }
