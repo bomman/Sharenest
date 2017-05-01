@@ -21,5 +21,7 @@ namespace Sharenest.Data.Interfaces
         void Delete(TEntity entityToDelete);
 
         void Update(TEntity entityToUpdate);
+
+        int Commit();
     }
 }

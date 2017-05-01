@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
-using Sharenest.Data;
+using System.Linq;
 using Sharenest.Data.Interfaces;
 using Sharenest.Models.BindingModels;
+using Sharenest.Models.EntityModels;
 using Sharenest.Models.ViewModels.Homes;
 using Sharenest.Services.Interfaces;
 
@@ -9,53 +10,64 @@ namespace Sharenest.Services
 {
     public class HomesService : Service, IHomesService
     {
-        private IHomesRepository repository;
+        private readonly IHomesRepository repository;
 
         public HomesService(IHomesRepository repository, IDbContext context) : base(context)
         {
             this.repository = repository;
         }
 
-        public ICollection<HomesIndexViewModel> GetLastSixPostedHomes()
+        public IEnumerable<HomesIndexViewModel> GetLastSixPostedHomes()
         {
-            //TODO:
-            throw new System.NotImplementedException();
+            var homes = repository.Get()
+                .OrderBy(home => home.PostedDate)
+                .Take(6);
+
+            var viewModels = AutoMapper.Mapper.Map<IEnumerable<Home>, IEnumerable<HomesIndexViewModel>>(homes);
+            return viewModels;
         }
 
         public HomeDetailsViewModel GetHomeDetailsViewModelById(int id)
         {
-            throw new System.NotImplementedException();
+            var home = 
+                AutoMapper.Mapper.Map<Home, HomeDetailsViewModel>(
+                repository.GetByID(id)
+                );
+
+            return home;
         }
 
         public void AddHome(AddHomeBindingModel home)
         {
-            throw new System.NotImplementedException();
+            var homeToAdd = AutoMapper.Mapper.Map<AddHomeBindingModel, Home>(home);
+            repository.Insert(homeToAdd);
+            this.repository.Commit();
         }
 
         public void UpdateHome(UpdateHomeBindingModel home)
         {
-            throw new System.NotImplementedException();
+            var homeToUpdate = AutoMapper.Mapper.Map<UpdateHomeBindingModel, Home>(home);
+            repository.Update(homeToUpdate);
+            this.repository.Commit();
         }
 
         public HomeEditViewModel GetHomeEditViewModelById(int id)
         {
-            throw new System.NotImplementedException();
+            var home = repository.GetByID(id);
+            var editViewModel = AutoMapper.Mapper.Map<Home, HomeEditViewModel>(home);
+
+            return editViewModel;
         }
 
         public void DeleteHomeById(int id)
         {
             this.repository.Delete(id);
+            this.repository.Commit();
         }
 
-        public void Dispose(bool disposing)
+        public HomeEditViewModel ChangeUpdateHomeBindingModelToHomesEditViewModel(UpdateHomeBindingModel home)
         {
-            //TODO:
-        }
-
-        public HomeDetailsViewModel GetHomeDetailsViewModelById(int? id)
-        {
-            //TODO:
-            throw new System.NotImplementedException();
+            return AutoMapper.Mapper.Map<UpdateHomeBindingModel, HomeEditViewModel>(home);
         }
     }
 }

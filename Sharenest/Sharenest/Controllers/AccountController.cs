@@ -6,7 +6,6 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Sharenest.Models.EntityModels;
-using Sharenest.Models.ViewModels;
 using Sharenest.Models.ViewModels.Account;
 
 namespace Sharenest.Controllers

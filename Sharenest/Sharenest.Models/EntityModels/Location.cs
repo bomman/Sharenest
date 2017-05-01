@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Sharenest.Models.EntityModels
@@ -10,6 +11,7 @@ namespace Sharenest.Models.EntityModels
         public int Id { get; set; }
 
         [Required]
+        [DisplayName("Location  Name")]
         public string Name { get; set; }
 
         [Required]

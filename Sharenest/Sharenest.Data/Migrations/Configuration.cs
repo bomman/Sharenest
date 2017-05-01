@@ -5,7 +5,6 @@ using Sharenest.Models.EntityModels;
 namespace Sharenest.Data.Migrations
 {
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
@@ -37,8 +36,8 @@ namespace Sharenest.Data.Migrations
 
             if (!context.Users.Any())
             {
-                var user = new ApplicationUser { UserName = "bomman", Email = "bggadbg@abv.bg" };
-                userManager.Create(user);
+                var user = new ApplicationUser { UserName = "bomman", Email = "bggadbg@abv.bg"};
+                userManager.Create(user, "1qazXSW@");
                 userManager.AddToRole(user.Id, "Admin");
             }
 
@@ -49,6 +48,7 @@ namespace Sharenest.Data.Migrations
                 Activities = "going to the park, visiting the local university and playing voleyball",
                 EndDate = DateTime.Today.AddDays(10),
                 StartDate = DateTime.Today.AddDays(3),
+                PostedDate = DateTime.Now,
                 Location = new Location()
                 {
                     Name = "Sliven",
@@ -66,6 +66,7 @@ namespace Sharenest.Data.Migrations
                 Activities = "chistene na prasetata rano sutrin, duiene na kravite wecher i kopane na nivata prez denq",
                 EndDate = DateTime.Today.AddDays(20),
                 StartDate = DateTime.Today.AddDays(6),
+                PostedDate = DateTime.Now,
                 Location = new Location()
                 {
                     Name = "Mechkarevo",

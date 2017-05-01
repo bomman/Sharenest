@@ -57,7 +57,7 @@
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IHomesRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="GenericRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\HomesRepository.cs" />
     <Compile Include="SharenestDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
