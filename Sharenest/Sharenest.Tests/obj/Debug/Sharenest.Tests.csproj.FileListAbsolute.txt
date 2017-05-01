@@ -130,3 +130,8 @@ C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharene
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\obj\Debug\Sharenest.Tests.csprojResolveAssemblyReference.cache
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\obj\Debug\Sharenest.Tests.dll
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\obj\Debug\Sharenest.Tests.pdb
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\bin\Debug\WebActivatorEx.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\bin\Debug\AutoMapper.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\bin\Debug\Ninject.Web.Common.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\bin\Debug\AutoMapper.xml
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Tests\bin\Debug\Ninject.Web.Common.xml

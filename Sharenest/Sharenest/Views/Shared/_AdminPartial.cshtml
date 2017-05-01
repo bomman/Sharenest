@@ -1,5 +1,5 @@
 ﻿@if (Request.IsAuthenticated && User.IsInRole("Admin"))
 {
-    @Html.ActionLink("Admin Panel", "Index", "Admin")
+    @Html.ActionLink("Admin Panel", "Index", "Admin", new { area = "Admin" }, new { @class = "" })
 }
 

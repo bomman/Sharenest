@@ -9,6 +9,9 @@ namespace Sharenest.Areas.Admin.Controllers
     public class AdminController : Controller
     {
         // GET: Admin/Admin
+        [HttpGet]
+        [Route]
+        [Route("Index")]
         public ActionResult Index()
         {
             return View();
