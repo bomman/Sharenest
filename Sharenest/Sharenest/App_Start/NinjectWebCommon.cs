@@ -67,8 +67,12 @@ namespace Sharenest.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IDbContext>().To<SharenestDbContext>();
+
             kernel.Bind<IHomesRepository>().To<HomesRepository>();
+            kernel.Bind<IPersonsRepository>().To<PersonsRepository>();
+
             kernel.Bind<IHomesService>().To<HomesService>();
+            kernel.Bind<IAdminService>().To<AdminService>();
         }        
     }
 }

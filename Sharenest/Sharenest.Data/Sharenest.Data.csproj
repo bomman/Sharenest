@@ -42,6 +42,7 @@
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -56,9 +57,11 @@
     <Compile Include="Interfaces\IDbContext.cs" />
     <Compile Include="Interfaces\IGenericRepository.cs" />
     <Compile Include="Interfaces\IHomesRepository.cs" />
+    <Compile Include="Interfaces\IPersonsRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\HomesRepository.cs" />
+    <Compile Include="Repositories\PersonsRepository.cs" />
     <Compile Include="SharenestDbContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

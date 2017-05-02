@@ -45,7 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminService.cs" />
     <Compile Include="HomesService.cs" />
+    <Compile Include="Interfaces\IAdminService.cs" />
     <Compile Include="Interfaces\IHomesService.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,5 +1,8 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Sharenest.Models.Attributes;
+using Sharenest.Models.ViewModels.Admin;
+using Sharenest.Services.Interfaces;
 
 namespace Sharenest.Areas.Admin.Controllers
 {
@@ -8,13 +11,36 @@ namespace Sharenest.Areas.Admin.Controllers
     [RouteArea("Admin")]
     public class AdminController : Controller
     {
-        // GET: Admin/Admin
+        private readonly IAdminService service;
+
+        public AdminController(IAdminService service)
+        {
+            this.service = service;
+        }
+
         [HttpGet]
         [Route]
         [Route("Index")]
         public ActionResult Index()
         {
+
             return View();
+        }
+
+        [HttpGet]
+        [Route("Persons")]
+        public ActionResult Persons()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        [Route("Homes")]
+        public ActionResult Homes()
+        {
+            IEnumerable<AdminHomesViewModel> viewModels = this.service.GetAllHomes();
+
+            return View(viewModels);
         }
     }
 }

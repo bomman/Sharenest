@@ -1,5 +1,4 @@
-﻿using System;
-using System.Net;
+﻿using System.Net;
 using System.Web.Mvc;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.ViewModels.Homes;
