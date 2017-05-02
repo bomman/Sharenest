@@ -4,49 +4,104 @@
     ViewBag.Title = "Details";
 }
 
-<h2>@Model.Name</h2>
+@section Scripts {
+    <script>
+        function googleMap() {
+            var mapProp= {
+                center: new google.maps.LatLng(@Model.Location.Latitude,@Model.Location.Longitude),
+                zoom: 12,
+                mapTypeId: google.maps.MapTypeId.HYBRID
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        }
+    </script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCQss8SEs-6W4xvqFeFQKv7WFK7SmS7wsE&callback=googleMap"
+            type="text/javascript"></script>
+}
+
+
+<h1 class="text-center">@Model.Name</h1>
 
 <p>@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</p>
 <div class="panel">
-    <div class="panel-heading">
-        <img src="@Model.ProfilePicture" alt="Profile Picture"/>
-    </div>
-
     <div class="panel-body">
-        <div>
-            @Html.DisplayNameFor(model => model.Rating) - @Html.DisplayFor(model => model.Rating)
-            <input id="rating-system" type="number" class="rating" min="1" max="5" step="1">
-        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.Rating)</dt>
+                    <dd>@Html.DisplayFor(model => model.Rating)</dd>
+                    
+                    
+                    @using (Html.BeginForm("Rate", "Homes", new { area = "Homes" }, FormMethod.Post, new { id = "ratingForm" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.HiddenFor(model => model.Id)
+                        <dt>@Html.DropDownListFor(model => model.Rating, Enumerable.Range(1, 10).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString() }))</dt>
+                        <dd><a href="javascript:document.getElementById('ratingForm').submit()">Rate</a></dd>
+                    }
+                </dl>
 
-        <dl class="dl-horizontal">
-            <dt>@Html.DisplayNameFor(model => model.StartDate)</dt>
-            <dd>@Html.DisplayFor(model => model.StartDate)</dd>
-            
-            <dt>@Html.DisplayNameFor(model => model.EndDate)</dt>
-            <dd>@Html.DisplayFor(model => model.EndDate)</dd>
+                <dl class="dl-horizontal">
+                    <dt>@Html.DisplayNameFor(model => model.StartDate)</dt>
+                    <dd>@Html.DisplayFor(model => model.StartDate)</dd>
 
-            <dt>@Html.DisplayNameFor(model => model.Location.Name)</dt>
-            <dd>@Html.DisplayFor(model => model.Location.Name), @Html.DisplayFor(model => model.Location.Country)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.EndDate)</dt>
+                    <dd>@Html.DisplayFor(model => model.EndDate)</dd>
 
-            <dt>@Html.DisplayNameFor(model => model.Activities)</dt>
-            <dd>@Html.DisplayFor(model => model.Activities)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Location.Name)</dt>
+                    <dd>@Html.DisplayFor(model => model.Location.Name), @Html.DisplayFor(model => model.Location.Country)</dd>
 
-            <dt>@Html.DisplayNameFor(model => model.Provision)</dt>
-            <dd>@Html.DisplayFor(model => model.Provision)</dd>
+                    <dt>@Html.DisplayNameFor(model => model.Activities)</dt>
+                    <dd>@Html.DisplayFor(model => model.Activities)</dd>
 
-            <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
-            <dd>@Html.DisplayFor(model => model.Notes)</dd>
-        </dl>
-    </div>
-    <div class="panel-footer">
-        <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
-            <img src="http://pik.bg/f/gallery/187/0298ef57516d8859f57279a928a63398.jpg" class="img-responsive">
-        </div>
-        @foreach (var picture in Model.PicturesMedium)
-        {
-            <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6">
-                <img src="@picture" class="img-responsive">
+                    <dt>@Html.DisplayNameFor(model => model.Provision)</dt>
+                    <dd>@Html.DisplayFor(model => model.Provision)</dd>
+
+                    <dt>@Html.DisplayNameFor(model => model.Notes)</dt>
+                    <dd>@Html.DisplayFor(model => model.Notes)</dd>
+                </dl>
             </div>
-        }
+            <div class="col-md-6">
+                <div class="panel-heading">
+                    <img src="@Model.ProfilePicture" alt="Profile Picture" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div id="googleMap" style="width:100%;height:400px;"></div>
+        </div>
+
+        <div class="row">
+            <h3>Uploaded pictures</h3>
+            <div id="myCarousel" class="carousel" data-ride="carousel">
+                <!-- Wrapper for slides -->
+                @if (Model.PicturesMedium.Count == 0)
+            {
+                    <p>No uploaded picture</p>
+                }
+                else
+                {
+                    <div class="carousel-inner">
+                        @foreach (var picture in Model.PicturesMedium)
+                        {
+                            <div class="item active">
+                                <img src="@picture" alt="Picture" style="width: 100%;">
+                            </div>
+                        }
+                    </div>
+
+                <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                }
+            </div>
+        </div>
     </div>
 </div>

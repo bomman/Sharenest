@@ -42,7 +42,7 @@ namespace Sharenest.Models.EntityModels
 
         [DefaultValue(0)]
         [Range(0, 10)]
-        public int Rating { get; set; }
+        public decimal Rating { get; set; }
 
         public string ProfilePicture { get; set; }
 

@@ -83,6 +83,7 @@
   <ItemGroup>
     <Compile Include="Attributes\RoleAuthorizationAttribute.cs" />
     <Compile Include="BindingModels\AddHomeBindingModel.cs" />
+    <Compile Include="BindingModels\DatailsRateBindingModel.cs" />
     <Compile Include="BindingModels\UpdateHomeBindingModel.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
     <Compile Include="EntityModels\Home.cs" />

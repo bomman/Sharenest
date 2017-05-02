@@ -13,5 +13,6 @@ namespace Sharenest.Services.Interfaces
         HomeEditViewModel GetHomeEditViewModelById(int id);
         void DeleteHomeById(int id);
         HomeEditViewModel ChangeUpdateHomeBindingModelToHomesEditViewModel(UpdateHomeBindingModel home);
+        void UpdateHomeRating(DatailsRateBindingModel model);
     }
 }

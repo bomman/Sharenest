@@ -125,5 +125,14 @@ namespace Sharenest.Areas.Homes.Controllers
             this.service.DeleteHomeById(id);
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        [Route("Rate/{id}")]
+        [ValidateAntiForgeryToken]
+        public ActionResult Rate([Bind(Include = ("Id,Rating"))] DatailsRateBindingModel model)
+        {
+            this.service.UpdateHomeRating(model);
+            return RedirectToAction("Details");
+        }
     }
 }

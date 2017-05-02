@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Sharenest.Data.Interfaces;
 using Sharenest.Models.BindingModels;
@@ -68,6 +69,15 @@ namespace Sharenest.Services
         public HomeEditViewModel ChangeUpdateHomeBindingModelToHomesEditViewModel(UpdateHomeBindingModel home)
         {
             return AutoMapper.Mapper.Map<UpdateHomeBindingModel, HomeEditViewModel>(home);
+        }
+
+        public void UpdateHomeRating(DatailsRateBindingModel model)
+        {
+            Home home = this.repository.GetByID(model.Id);
+            home.Rating = (home.Rating + model.Rating) / 2;
+
+            this.repository.Update(home);
+            this.repository.Commit();
         }
     }
 }
