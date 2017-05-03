@@ -4,6 +4,7 @@ using Sharenest.Data.Interfaces;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.EntityModels;
 using Sharenest.Models.ViewModels.Homes;
+using Sharenest.Services.Helpers;
 using Sharenest.Services.Interfaces;
 
 namespace Sharenest.Services
@@ -40,6 +41,8 @@ namespace Sharenest.Services
         public void AddHome(AddHomeBindingModel home)
         {
             var homeToAdd = AutoMapper.Mapper.Map<AddHomeBindingModel, Home>(home);
+            var profilePicture = PictureHelper.ConvertToBytes(home.ProfilePicture);
+
             repository.Insert(homeToAdd);
             this.repository.Commit();
         }

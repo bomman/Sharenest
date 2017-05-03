@@ -42,6 +42,7 @@ namespace Sharenest
 
                     cfg.CreateMap<AddHomeBindingModel, Location>();
                     cfg.CreateMap<AddHomeBindingModel, Home>()
+                    .ForMember(x => x.ProfilePicture, opt => opt.Ignore())
                     .ForMember(dest => dest.Location, opt =>
                             opt.MapFrom(src => Mapper.Map<AddHomeBindingModel, Location>(src)));
                     cfg.CreateMap<UpdateHomeBindingModel, Location>();

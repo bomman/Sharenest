@@ -1,4 +1,5 @@
 ﻿using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.ViewModels.Homes;
@@ -54,8 +55,10 @@ namespace Sharenest.Areas.Homes.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Create")]
-        public ActionResult Create([Bind(Include = "Id,Name,Location.Country,Location.Name,Activities,Provision,Notes,StartDate,EndDate")] AddHomeBindingModel home)
+        public ActionResult Create([Bind(Include = "Id,Name,Country,LocationName,Activities,Provision,Notes,StartDate,EndDate,ProfilePicture")] AddHomeBindingModel home)
         {
+            string gadgetPicture = System.IO.Path.GetFileName(home.ProfilePicture.FileName);
+
             if (ModelState.IsValid)
             {
                 this.service.AddHome(home);
@@ -86,7 +89,7 @@ namespace Sharenest.Areas.Homes.Controllers
         [HttpPost]
         [Route("Edit/{id}")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Location.Country,Location.Name,Activities,Provision,Notes,StartDate,EndDate")] UpdateHomeBindingModel home)
+        public ActionResult Edit([Bind(Include = "Id,Name,Country,LocationName,Activities,Provision,Notes,StartDate,EndDate")] UpdateHomeBindingModel home)
         {
             if (ModelState.IsValid)
             {

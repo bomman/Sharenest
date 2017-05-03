@@ -57,7 +57,8 @@ namespace Sharenest.Data.Migrations
                     Longitude = 26.3291667m
                 },
                 Provision = "bed for 2 plus parking place",
-                Notes = "near the stadium Hadji Dimitar"
+                Notes = "near the stadium Hadji Dimitar",
+                ProfilePicture = "http://www.nasamnatam.com/usergal/411/Sl-4.JPG"
             });
 
             context.Homes.AddOrUpdate(new Home()
@@ -75,7 +76,8 @@ namespace Sharenest.Data.Migrations
                     Longitude = 26.283333m
                 },
                 Provision = "hamak ili palatka v dvora do kucheto",
-                Notes = "shte usetite selskoto gostopriemstvo i ot chasti bita na horata"
+                Notes = "shte usetite selskoto gostopriemstvo i ot chasti bita na horata",
+                ProfilePicture = "https://img12.olx.bg/images_prodavalnikcom/101480360_4_171x132_pchelen-med-dom-i-gradina.jpg"
             });
 
             context.SaveChanges();

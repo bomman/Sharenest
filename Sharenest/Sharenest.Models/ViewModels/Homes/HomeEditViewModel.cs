@@ -10,8 +10,10 @@ namespace Sharenest.Models.ViewModels.Homes
     {
         public int Id { get; set; }
 
+        [Required]
         public string Name { get; set; }
 
+        [Required]
         public Location Location { get; set; }
 
         [Required]
@@ -22,16 +24,19 @@ namespace Sharenest.Models.ViewModels.Homes
 
         public string Notes { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DisplayName("Start Date")]
         public DateTime? StartDate { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DisplayName("End Date")]
         public DateTime? EndDate { get; set; }
 
+        [Required]
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         public DateTime? PostedDate { get; set; }
