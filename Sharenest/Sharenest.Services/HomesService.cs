@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using Dropbox.Api;
 using Sharenest.Data.Interfaces;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.EntityModels;
@@ -24,6 +26,11 @@ namespace Sharenest.Services
                 .OrderBy(home => home.PostedDate)
                 .Take(6);
 
+            foreach (var home in homes)
+            {
+                home.ProfilePicture = ConvertPath(home.ProfilePicture);
+            }
+
             var viewModels = AutoMapper.Mapper.Map<IEnumerable<Home>, IEnumerable<HomesIndexViewModel>>(homes);
             return viewModels;
         }
@@ -35,14 +42,33 @@ namespace Sharenest.Services
                 repository.GetByID(id)
                 );
 
+            home.ProfilePicture = ConvertPath(home.ProfilePicture);
             return home;
         }
 
         public void AddHome(AddHomeBindingModel home)
         {
             var homeToAdd = AutoMapper.Mapper.Map<AddHomeBindingModel, Home>(home);
-            var profilePicture = PictureHelper.ConvertToBytes(home.ProfilePicture);
 
+            if (home.ProfilePicture != null)
+            {
+                var profilePicture = PictureHelper.ConvertToBytes(home.ProfilePicture);
+
+                string linkToProfilePicture = String.Empty;
+                using (var dbx = new DropboxClient(DropboxHelper.AccessToken))
+                {
+                    linkToProfilePicture = DropboxHelper.Upload(dbx, "/Homes/" + home.Name, "profile.png", profilePicture).ToString();
+                }
+
+                homeToAdd.ProfilePicture = linkToProfilePicture;
+            }
+            else
+            {
+                homeToAdd.ProfilePicture = "/Defaults/home.png";
+            }
+
+            GeocodingHelper.SetLocation(homeToAdd.Location);
+            homeToAdd.PostedDate = DateTime.Now;
             repository.Insert(homeToAdd);
             this.repository.Commit();
         }
@@ -80,6 +106,23 @@ namespace Sharenest.Services
 
             this.repository.Update(home);
             this.repository.Commit();
+        }
+
+        private string ConvertPath(string path)
+        {
+            int lastSlash = path.LastIndexOf('/');
+
+            string folder = path.Substring(0, lastSlash);
+            string file = path.Substring(lastSlash);
+
+            using (var dbx = new DropboxClient(DropboxHelper.AccessToken))
+            {
+                byte[] imageByteData = DropboxHelper.Download(dbx, folder, file);
+                string imageBase64Data = Convert.ToBase64String(imageByteData);
+                string imageDataURL = string.Format("data:image/png;base64,{0}", imageBase64Data);
+
+                return imageDataURL;
+            }   
         }
     }
 }

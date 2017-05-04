@@ -2,11 +2,6 @@
 @{
     ViewBag.Title = "Index";
 }
-<style>
-    .panel {
-        margin: 5px;    
-    }
-</style>
 
 <div class="jumbotron">
     <h1>Find your new home</h1>
@@ -19,7 +14,7 @@
     @foreach (var home in Model)
     {
         <div class="panel col-md-4">
-            <img class="img-thumbnail" src="@home." alt="Card image cap">
+            <img class="img-thumbnail" src="@home.ProfilePicture" alt="Card image cap">
             <div class="panel-body">
                 <h4 class="panel-title">@home.Name</h4>
                 <p class="caption">@home.StartDate - @home.EndDate</p>

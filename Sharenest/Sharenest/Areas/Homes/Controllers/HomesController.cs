@@ -1,5 +1,4 @@
 ﻿using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.ViewModels.Homes;
@@ -57,8 +56,6 @@ namespace Sharenest.Areas.Homes.Controllers
         [Route("Create")]
         public ActionResult Create([Bind(Include = "Id,Name,Country,LocationName,Activities,Provision,Notes,StartDate,EndDate,ProfilePicture")] AddHomeBindingModel home)
         {
-            string gadgetPicture = System.IO.Path.GetFileName(home.ProfilePicture.FileName);
-
             if (ModelState.IsValid)
             {
                 this.service.AddHome(home);

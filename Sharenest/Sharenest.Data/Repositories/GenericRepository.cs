@@ -5,7 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Sharenest.Data.Interfaces;
 
-namespace Sharenest.Data
+namespace Sharenest.Data.Repositories
 {
     public class GenericRepository<TEntity> :IGenericRepository<TEntity> where TEntity : class
     {

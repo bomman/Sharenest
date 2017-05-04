@@ -13,6 +13,7 @@ namespace Sharenest.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Sharenest.Data.SharenestDbContext context)
@@ -51,14 +52,14 @@ namespace Sharenest.Data.Migrations
                 PostedDate = DateTime.Now,
                 Location = new Location()
                 {
-                    Name = "Sliven",
+                    LocationName = "Sliven",
                     Country = "Bulgaria",
                     Latitude = 42.6858333m,
                     Longitude = 26.3291667m
                 },
                 Provision = "bed for 2 plus parking place",
                 Notes = "near the stadium Hadji Dimitar",
-                ProfilePicture = "http://www.nasamnatam.com/usergal/411/Sl-4.JPG"
+                ProfilePicture = "/Defaults/home.png"
             });
 
             context.Homes.AddOrUpdate(new Home()
@@ -70,14 +71,14 @@ namespace Sharenest.Data.Migrations
                 PostedDate = DateTime.Now,
                 Location = new Location()
                 {
-                    Name = "Mechkarevo",
+                    LocationName = "Mechkarevo",
                     Country = "Bulgaria",
                     Latitude = 42.583333m,
                     Longitude = 26.283333m
                 },
                 Provision = "hamak ili palatka v dvora do kucheto",
                 Notes = "shte usetite selskoto gostopriemstvo i ot chasti bita na horata",
-                ProfilePicture = "https://img12.olx.bg/images_prodavalnikcom/101480360_4_171x132_pchelen-med-dom-i-gradina.jpg"
+                ProfilePicture = "/Defaults/home.png"
             });
 
             context.SaveChanges();

@@ -12,7 +12,7 @@ namespace Sharenest.Models.EntityModels
 
         [Required]
         [DisplayName("Location  Name")]
-        public string Name { get; set; }
+        public string LocationName { get; set; }
 
         [Required]
         public string Country { get; set; }

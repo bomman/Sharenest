@@ -1,3 +1,6 @@
+using Microsoft.AspNet.Identity;
+using Sharenest.Models.EntityModels;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Sharenest.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Sharenest.App_Start.NinjectWebCommon), "Stop")]
 

@@ -219,3 +219,4 @@ C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharene
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest\bin\Ninject.Web.Mvc.xml
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest\bin\Dropbox.Api.dll
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest\bin\Dropbox.Api.xml
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest\bin\Sharenest.Services.dll.config

@@ -86,6 +86,12 @@
     <Compile Include="BindingModels\DatailsRateBindingModel.cs" />
     <Compile Include="BindingModels\UpdateHomeBindingModel.cs" />
     <Compile Include="EntityModels\ApplicationUser.cs" />
+    <Compile Include="EntityModels\GeocodingModels\AddressComponent.cs" />
+    <Compile Include="EntityModels\GeocodingModels\Geometry.cs" />
+    <Compile Include="EntityModels\GeocodingModels\GeometryLocation.cs" />
+    <Compile Include="EntityModels\GeocodingModels\Result.cs" />
+    <Compile Include="EntityModels\GeocodingModels\RootObject.cs" />
+    <Compile Include="EntityModels\GeocodingModels\Viewport.cs" />
     <Compile Include="EntityModels\Home.cs" />
     <Compile Include="EntityModels\Location.cs" />
     <Compile Include="EntityModels\Person.cs" />

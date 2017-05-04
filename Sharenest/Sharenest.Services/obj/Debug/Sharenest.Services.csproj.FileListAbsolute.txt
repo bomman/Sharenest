@@ -32,3 +32,10 @@ C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharene
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\obj\Debug\Sharenest.Services.csprojResolveAssemblyReference.cache
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\obj\Debug\Sharenest.Services.dll
 C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\obj\Debug\Sharenest.Services.pdb
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\Sharenest.Services.dll.config
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\Dropbox.Api.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\Newtonsoft.Json.dll
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\Dropbox.Api.xml
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\bggad\Documents\Visual Studio 2017\Projects\Sharenest.git\trunk\Sharenest\Sharenest.Services\bin\Debug\Newtonsoft.Json.xml
