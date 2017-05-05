@@ -39,7 +39,7 @@ namespace Sharenest.Areas.Homes.Controllers
             HomeDetailsViewModel home = this.service.GetHomeDetailsViewModelById((int) id);
             if (home == null)
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
             return View(home);
         }
@@ -78,7 +78,7 @@ namespace Sharenest.Areas.Homes.Controllers
 
             if (home == null)
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
             return View(home);
         }
@@ -110,7 +110,7 @@ namespace Sharenest.Areas.Homes.Controllers
             HomeDetailsViewModel home = this.service.GetHomeDetailsViewModelById((int)id);
             if (home == null)
             {
-                return HttpNotFound();
+                return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
             return View(home);
         }

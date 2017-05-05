@@ -3,6 +3,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
+using Microsoft.Owin.Security.Google;
 using Owin;
 using Sharenest.Data;
 using Sharenest.Models.EntityModels;
@@ -54,14 +55,14 @@ namespace Sharenest
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "1851520108420007",
+               appSecret: "a1d8da934cdc47bd9d3382dabbcee7ff");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
-            //    ClientId = "",
-            //    ClientSecret = ""
+            //    ClientId = "701911876642-8rvrfs0c4qu80osoffsatfpviotoqqod.apps.googleusercontent.com",
+            //    ClientSecret = "N2OAcnBbkVq8qDOWKUR5hvcY"
             //});
         }
     }

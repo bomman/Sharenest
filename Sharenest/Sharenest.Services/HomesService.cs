@@ -15,7 +15,7 @@ namespace Sharenest.Services
     {
         private readonly IHomesRepository repository;
 
-        public HomesService(IHomesRepository repository, IDbContext context) : base(context)
+        public HomesService(IHomesRepository repository) : base()
         {
             this.repository = repository;
         }
@@ -37,12 +37,17 @@ namespace Sharenest.Services
 
         public HomeDetailsViewModel GetHomeDetailsViewModelById(int id)
         {
+            var model = repository.GetByID(id);
             var home = 
-                AutoMapper.Mapper.Map<Home, HomeDetailsViewModel>(
-                repository.GetByID(id)
-                );
+                AutoMapper.Mapper.Map<Home, HomeDetailsViewModel>(model);
 
-            home.ProfilePicture = ConvertPath(home.ProfilePicture);
+            if (home?.ProfilePicture != null)
+            {
+                home.ProfilePicture = ConvertPath(home.ProfilePicture);
+            }
+
+            //home.Location.LocationName = model.Location.LocationName;
+
             return home;
         }
 
@@ -84,6 +89,7 @@ namespace Sharenest.Services
         {
             var home = repository.GetByID(id);
             var editViewModel = AutoMapper.Mapper.Map<Home, HomeEditViewModel>(home);
+           // editViewModel.Location.LocationName = home.Location.LocationName;
 
             return editViewModel;
         }

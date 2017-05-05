@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Sharenest.Models.EntityModels.GeocodingModels;
 
 namespace Sharenest.Services.Helpers
@@ -14,7 +12,7 @@ namespace Sharenest.Services.Helpers
 
         public static void SetLocation(Sharenest.Models.EntityModels.Location location)
         {
-            string placeApiUrl = string.Format(googlePlaceAPIUrl, "Sofia", location.Country, appKey);
+            string placeApiUrl = string.Format(googlePlaceAPIUrl, location.LocationName, location.Country, appKey);
             var result = new System.Net.WebClient().DownloadString(placeApiUrl);
             var jsonobject = JsonConvert.DeserializeObject<RootObject>(result).results.First();
 

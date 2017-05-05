@@ -50,11 +50,12 @@ namespace Sharenest
                     cfg.CreateMap<Home, HomeDetailsViewModel>()
                         .ForMember(x => x.PicturesMedium, y => y.MapFrom(src => src.Pictures.Select(item => item.MediumPicturePath)));
                     cfg.CreateMap<Home, HomesIndexViewModel>();
+
                     cfg.CreateMap<AdminHomesViewModel, Location>();
                     cfg.CreateMap<AdminHomesViewModel, Home>()
                         .ForMember(dest => dest.Location, opt =>
                             opt.MapFrom(src => Mapper.Map<AdminHomesViewModel, Location>(src)))
-                            .ReverseMap();
+                        .ReverseMap();
 
                     #endregion
 

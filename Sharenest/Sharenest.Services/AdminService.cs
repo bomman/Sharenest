@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Sharenest.Data.Interfaces;
 using Sharenest.Models.EntityModels;
 using Sharenest.Models.ViewModels.Admin;
@@ -11,7 +12,7 @@ namespace Sharenest.Services
         private readonly IHomesRepository homesRepository;
         private readonly IPersonsRepository personsRepository;
 
-        public AdminService(IHomesRepository homesRepository, IPersonsRepository personsRepository, IDbContext context) : base(context)
+        public AdminService(IHomesRepository homesRepository, IPersonsRepository personsRepository) : base()
         {
             this.homesRepository = homesRepository;
             this.personsRepository = personsRepository;
@@ -19,9 +20,14 @@ namespace Sharenest.Services
 
         public IEnumerable<AdminHomesViewModel> GetAllHomes()
         {
-            IEnumerable<Home> homes = this.homesRepository.Get();
-            var homesViewModels = AutoMapper.Mapper.Map<IEnumerable<Home>, IEnumerable<AdminHomesViewModel>>(homes);
+            IList<Home> homes = this.homesRepository.Get().ToList();
+            var homesViewModels = AutoMapper.Mapper.Map<IEnumerable<Home>, IEnumerable<AdminHomesViewModel>>(homes).ToList();
 
+            for (int i = 0; i < homes.Count; i++)
+            {
+                homesViewModels[i].Country = homes[i].Location.Country;
+                homesViewModels[i].LocationName = homes[i].Location.LocationName;
+            }
             return homesViewModels;
         }
     }

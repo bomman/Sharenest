@@ -4,11 +4,8 @@ namespace Sharenest.Services
 {
     public abstract class Service 
     {
-        protected Service(IDbContext context)
+        protected Service()
         {
-            this.Context = context;
         }
-
-        public IDbContext Context { get; set; }
     }
 }
