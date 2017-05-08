@@ -1,19 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Linq.Expressions;
 using Sharenest.Data.Interfaces;
 
-namespace Sharenest.Data.Repositories
+namespace Sharenest.Tests.Data.Mocks
 {
-    public class GenericRepository<TEntity> :IGenericRepository<TEntity> where TEntity : class
+    public class FakeRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
     {
         internal IDbContext context;
         internal IDbSet<TEntity> dbSet;
 
-        public GenericRepository(IDbContext context)
+        public FakeRepository(IDbContext context)
         {
             this.context = context;
             this.dbSet = context.Set<TEntity>();
@@ -57,11 +56,6 @@ namespace Sharenest.Data.Repositories
             dbSet.Add(entity);
         }
 
-        public void InsertOrUpdate(TEntity entity)
-        {
-            dbSet.AddOrUpdate(entity);
-        }
-
         public virtual void Delete(object id)
         {
             TEntity entityToDelete = dbSet.Find(id);
@@ -83,7 +77,7 @@ namespace Sharenest.Data.Repositories
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
 
-        public int Commit()
+        public virtual int Commit()
         {
             return this.context.SaveChanges();
         }

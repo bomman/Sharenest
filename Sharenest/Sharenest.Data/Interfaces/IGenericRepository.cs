@@ -16,6 +16,8 @@ namespace Sharenest.Data.Interfaces
 
         void Insert(TEntity entity);
 
+        void InsertOrUpdate(TEntity entity);
+
         void Delete(object id);
 
         void Delete(TEntity entityToDelete);

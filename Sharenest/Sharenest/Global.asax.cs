@@ -5,6 +5,7 @@ using System.Web.Routing;
 using AutoMapper;
 using Sharenest.Models.BindingModels;
 using Sharenest.Models.EntityModels;
+using Sharenest.Models.ViewModels.Account;
 using Sharenest.Models.ViewModels.Homes;
 using Sharenest.Models.ViewModels.Admin;
 
@@ -57,9 +58,16 @@ namespace Sharenest
                             opt.MapFrom(src => Mapper.Map<AdminHomesViewModel, Location>(src)))
                         .ReverseMap();
 
+
+                    cfg.CreateMap<RegisterViewModel, Person>();
+
+                    cfg.CreateMap<Person, AdminPersonsViewModel>();
                     #endregion
 
-                    cfg.CreateMap<HomeEditViewModel, UpdateHomeBindingModel>();
+                    cfg.CreateMap<UpdateHomeBindingModel, Location>();
+                    cfg.CreateMap<UpdateHomeBindingModel, HomeEditViewModel>()
+                        .ForMember(dest => dest.Location, opt =>
+                            opt.MapFrom(src => Mapper.Map<UpdateHomeBindingModel, Location>(src)));
                 }
             );
         }

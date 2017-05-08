@@ -1,20 +1,15 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Sharenest.Data.Interfaces;
 using Sharenest.Models.EntityModels;
 
-namespace Sharenest.Data.Interfaces
+namespace Sharenest.Tests.Data
 {
-    public interface IDbContext
+    public interface ISharenestDbContext
     {
         IDbSet<TEntity> Set<TEntity>() where TEntity : class;
-
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
-
         int SaveChanges();
-
         DbSet<Home> Homes { get; set; }
-
-        IDbSet<IdentityRole> Roles { get; set; }
     }
 }

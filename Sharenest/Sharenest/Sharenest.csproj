@@ -232,7 +232,7 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Homes\Views\web.config" />
     <Content Include="Areas\Homes\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Homes\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Homes\Views\Homes\Shared\_Layout.cshtml" />
     <Content Include="Areas\Homes\Views\Homes\Create.cshtml" />
     <Content Include="Areas\Homes\Views\Homes\Delete.cshtml" />
     <Content Include="Areas\Homes\Views\Homes\Details.cshtml" />
@@ -242,9 +242,9 @@
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_AdminPartial.cshtml" />
-    <Content Include="Areas\Homes\Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Areas\Homes\Views\Homes\Shared\_LoginPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Areas\Homes\Views\Shared\_AdminPartial.cshtml" />
+    <Content Include="Areas\Homes\Views\Homes\Shared\_AdminPartial.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Persons.cshtml" />
     <Content Include="Areas\Admin\Views\Admin\Homes.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -296,7 +296,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Dropbox\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

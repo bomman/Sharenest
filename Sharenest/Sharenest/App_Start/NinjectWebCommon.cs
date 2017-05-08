@@ -76,6 +76,7 @@ namespace Sharenest.App_Start
 
             kernel.Bind<IHomesService>().To<HomesService>();
             kernel.Bind<IAdminService>().To<AdminService>();
+            kernel.Bind<IPersonsService>().To<PersonsService>();
         }        
     }
 }

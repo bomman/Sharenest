@@ -6,5 +6,6 @@ namespace Sharenest.Services.Interfaces
     public interface IAdminService
     {
         IEnumerable<AdminHomesViewModel> GetAllHomes();
+        IEnumerable<AdminPersonsViewModel> GetAllPerons();
     }
 }

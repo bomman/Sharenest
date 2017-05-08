@@ -15,6 +15,9 @@ namespace Sharenest.Models.EntityModels
             this.VisitedPlaces = new HashSet<Home>();
         }
 
+        public string UserId { get; set; }
+
+        [ForeignKey("UserId")]
         public virtual ApplicationUser User { get; set; }
 
         [Key]
@@ -29,7 +32,8 @@ namespace Sharenest.Models.EntityModels
         [Required]
         public int Age { get; set; }
 
-        public GenderEnum Gender { get; set; }
+        [DefaultValue(0)]
+        public virtual GenderEnum Gender { get; set; }
 
         public virtual Location Location { get; set; }
 

@@ -7,6 +7,8 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Sharenest.Models.EntityModels;
 using Sharenest.Models.ViewModels.Account;
+using Sharenest.Services;
+using Sharenest.Services.Interfaces;
 
 namespace Sharenest.Controllers
 {
@@ -15,9 +17,11 @@ namespace Sharenest.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private IPersonsService service;
 
-        public AccountController()
+        public AccountController(IPersonsService service)
         {
+            this.service = service;
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)
@@ -155,6 +159,9 @@ namespace Sharenest.Controllers
                 if (result.Succeeded)
                 {
                     this.UserManager.AddToRole(user.Id, "Person");
+
+                    var currentUser = UserManager.FindByName(user.UserName);
+                    this.service.AddPerson(model, currentUser);
 
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
 

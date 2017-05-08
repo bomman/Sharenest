@@ -72,6 +72,8 @@
     <Compile Include="HomesService.cs" />
     <Compile Include="Interfaces\IAdminService.cs" />
     <Compile Include="Interfaces\IHomesService.cs" />
+    <Compile Include="Interfaces\IPersonsService.cs" />
+    <Compile Include="PersonsService.cs" />
     <Compile Include="Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

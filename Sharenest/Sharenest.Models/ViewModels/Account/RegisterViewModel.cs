@@ -1,9 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using Sharenest.Models.Enums;
 
 namespace Sharenest.Models.ViewModels.Account
 {
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(255, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        [Display(Name = "First name")]
+        public string FirstName { get; set; }
+
+        [Required]
+        [StringLength(255, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 2)]
+        [Display(Name = "Last name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -19,5 +30,11 @@ namespace Sharenest.Models.ViewModels.Account
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Age { get; set; }
+
+        [Required]
+        public GenderEnum Gender { get; set; }
     }
 }

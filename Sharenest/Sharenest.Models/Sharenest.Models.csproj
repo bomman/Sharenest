@@ -99,6 +99,8 @@
     <Compile Include="Enums\GenderEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Admin\AdminHomesViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminPersonsViewModel.cs" />
+    <Compile Include="ViewModels\Admin\AdminRoleViewModel.cs" />
     <Compile Include="ViewModels\Homes\HomeDetailsViewModel.cs" />
     <Compile Include="ViewModels\Homes\HomeEditViewModel.cs" />
     <Compile Include="ViewModels\Homes\HomesIndexViewModel.cs" />

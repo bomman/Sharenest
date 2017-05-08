@@ -31,7 +31,8 @@ namespace Sharenest.Areas.Admin.Controllers
         [Route("Persons")]
         public ActionResult Persons()
         {
-            return View();
+            IEnumerable<AdminPersonsViewModel> viewModels = this.service.GetAllPerons();
+            return View(viewModels);
         }
 
         [HttpGet]
