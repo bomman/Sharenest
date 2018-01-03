@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace Sharenest.Models.ViewModels.Admin
@@ -13,9 +14,11 @@ namespace Sharenest.Models.ViewModels.Admin
 
         public string LocationName { get; set; }
 
+        [DisplayName("Start Date")]
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
 
+        [DisplayName("Start Date")]
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 

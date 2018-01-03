@@ -3,6 +3,10 @@
     ViewBag.Title = "Index";
 }
 
+@section Styles {
+    <link href="@Url.Content("~/Styles/homes/index.css")" rel="stylesheet" type="text/css" />
+}
+
 <div class="jumbotron">
     <h1>Find your new home</h1>
     <p>Are you looking for a place far away form home but feels like home? Or you want to invite new friends in your home.</p>
@@ -13,12 +17,15 @@
 <div class="row">
     @foreach (var home in Model)
     {
-        <div class="panel col-md-4">
-            <img class="img-thumbnail" style="max-height: 400px;" src="@home.ProfilePicture" alt="Card image cap">
+        <div class="panel col-md-3">
+            <div class="panel-image">
+                <img class="image img-thumbnail" src="@home.ProfilePicture" alt="Card image cap">
+            </div>
+            
             <div class="panel-body">
                 <h4 class="panel-title">@home.Name</h4>
-                <p class="caption">@home.StartDate - @home.EndDate</p>
-                @Html.ActionLink("View", "Details", new { id = home.Id }, new { @class = "btn btn-primary"})
+                <p class="caption">@home.StartDate.Value.ToString("dd.MM.yyyy") - @home.EndDate.Value.ToString("dd.MM.yyyy")</p>
+                @Html.ActionLink("View", "Details", new {id = home.Id}, new {@class = "btn btn-block"})
             </div>
             <div class="panel-info">
                 <small class="text-muted">Posted on @home.PostedDate</small>

@@ -26,9 +26,11 @@ namespace Sharenest.Models.ViewModels.Homes
 
         public string Notes { get; set; }
 
+        [DisplayName("Start Date")]
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
 
+        [DisplayName("End Date")]
         [DataType(DataType.Date)]
         public DateTime? EndDate { get; set; }
 

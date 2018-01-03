@@ -6,7 +6,7 @@ namespace Sharenest.Services.Helpers
 {
     public static class GeocodingHelper
     {
-        private static string appKey = "AIzaSyB5TC-EyM2QYJVd3s5rephYxfKjZ4FrFzA";
+        private static string appKey = "AIzaSyATsbRfkqvVk1_jsoxzD7d6TO3E9j3sEI4";
         private static string googlePlaceAPIUrl =
             "https://maps.googleapis.com/maps/api/geocode/json?address={0}+{1}&key={2}\r\n";
 

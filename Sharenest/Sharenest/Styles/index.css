@@ -1,0 +1,20 @@
+﻿body {
+    background: url("https://imgrabo.com/pics/companies/72faf7adaf35db845abbae76d6f8f2e5.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.welcome {
+    color: #ffffff;
+    position: absolute;
+    top: 35%;
+    left: 15%;
+    background-color: rgba(245, 245, 245, 0.40);
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    padding: 5px;
+}

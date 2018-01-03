@@ -82,7 +82,6 @@ namespace Sharenest.Data.Migrations
             });
 
             context.SaveChanges();
-
         }
     }
 }

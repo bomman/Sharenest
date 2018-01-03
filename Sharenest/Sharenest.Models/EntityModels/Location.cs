@@ -11,7 +11,7 @@ namespace Sharenest.Models.EntityModels
         public int Id { get; set; }
 
         [Required]
-        [DisplayName("Location  Name")]
+        [DisplayName("Location Name")]
         public string LocationName { get; set; }
 
         [Required]

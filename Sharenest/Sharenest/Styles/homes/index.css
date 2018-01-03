@@ -1,0 +1,14 @@
+﻿.panel-image {
+    width: 250px;
+    height: 170px;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}
+
+.btn-block {
+    color: white;
+    background-color: #a5a5a5;
+}
